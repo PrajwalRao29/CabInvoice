@@ -1,11 +1,11 @@
 
 public class InvoiceSummary {
-    public int rides;
-    public double totalFare;
-    public double averageFare;
+    public int rides=0;
+    public double totalFare=0;
+    public double averageFare=0;
     public InvoiceSummary(int count, double sum) {
-        rides=count;
-        totalFare=sum;
+        rides=rides+count;
+        totalFare=totalFare+sum;
         averageFare=totalFare/rides;
     }
 
