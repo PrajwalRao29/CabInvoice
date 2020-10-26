@@ -10,13 +10,17 @@ public class CabInvoice {
         }
         return (10*distance+1*time<5)?5:(10*distance+1*time);
     }
-    public double generateInvoice(Ride[] rides)
+
+    public InvoiceSummary generateInvoice(Ride[] rides)
     {
         double sum=0;
+        int count=0;
+
         for(Ride r:rides)
         {
+            count++;
             sum=sum+this.generateInvoice(r.distance,r.time);
         }
-        return sum;
+        return new InvoiceSummary(count,sum);
     }
 }

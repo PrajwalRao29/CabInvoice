@@ -16,8 +16,10 @@ public class TestCabInvoice {
         Assert.assertEquals(-1,c.generateInvoice(15,0),0);
     }
     @Test
-    public void test4_MultipleRide(){
-        Ride[] rides={new Ride(2,4),new Ride(5,2)};
-        Assert.assertEquals(76,  c.generateInvoice(rides),0);
+    public void test4_InvoiceSummary(){
+        Ride[] rides={new Ride(2,5),new Ride(0.1,1)};
+        InvoiceSummary outcome=c.generateInvoice(rides);
+        InvoiceSummary expected=new InvoiceSummary(2,30);
+        Assert.assertEquals(expected,outcome);
     }
 }
